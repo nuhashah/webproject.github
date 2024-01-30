@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta viewport="width=device-width, initial-scale=1.0">
+    <title>Karate Instructor</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+            color: white;
+        }
+
+        .hero-slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+
+        .hero-slide {
+            display: none;
+            width: 100%;
+        }
+
+        .hero-slide img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .hero-text h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px #000;
+            margin: 0;
+        }
+
+        .hero-text p {
+            font-size: 1.4em;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .content {
+            text-align: left;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .instructor, .testimonial {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s;
+        }
+
+        .instructor:hover, .testimonial:hover {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .instructor img, .testimonial img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            float: left;
+            margin-right: 15px;
+        }
+
+        .instructor h3, .testimonial h3 {
+            margin-top: 0;
+        }
+
+        .instructor p, .testimonial p {
+            margin-left: 120px;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+            transition: box-shadow 0.3s;
+        }
+
+        .contact-form:hover {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .contact-form button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#instructors">Instructors</a>
+        <a href="#classes">Classes</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div id="home" class="hero-slideshow-container">
+        <div class="hero-slide">
+            <img src="https://images.pexels.com/photos/277019/pexels-photo-277019.jpeg" alt="Karate Pose">
+            <div class="hero-text">
+                <h1>Welcome to Our Karate Academy</h1>
+                <p>Master the art of Karate under expert guidance.</p>
+            </div>
+        </div>
+        <div class="hero-slide">
+            <img src="https://images.pexels.com/photos/163403/karate-sunset-fight-sports-163403.jpeg" alt="Karate at Sunset">
+            <div class="hero-text">
+                <h1>Build Strength and Discipline</h1>
+                <p>Join our community of martial arts enthusiasts.</p>
+            </div>
+        </div>
+        <div class="hero-slide">
+            <img src="https://images.pexels.com/photos/259945/pexels-photo-259945.jpeg" alt="Karate Training">
+            <div class="hero-text">
+                <h1>Discover Your Potential</h1>
+                <p>Learn from the best instructors in a supportive environment.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="instructors" class="section">
+        <h2>Meet Our Instructors</h2>
+        <div class="content">
+            <div class="instructor">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Instructor 1">
+                <h3>Sensei Akira</h3>
+                <p>With over 30 years of experience in karate, Sensei Akira brings a wealth of knowledge and expertise to our dojo. He specializes in Shotokan Karate and emphasizes the importance of mental discipline along with physical skill.</p>
+                <div class="clear"></div>
+            </div>
+            <div class="instructor">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Instructor 2">
+                <h3>Sensei Hina</h3>
+                <p>Sensei Hina is known for her dynamic teaching style and her focus on self-defense techniques. She encourages students to push their limits and believes in the transformative power of martial arts.</p>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="classes" class="section">
+        <h2>Our Classes</h2>
+        <div class="content">
+            <p>Our dojo offers a range of classes for all ages and skill levels. From beginners to advanced practitioners, we have something for everyone. Our classes include:</p>
+            <ul>
+                <li>Kids Karate: Focusing on fun, discipline, and basic skills.</li>
+                <li>Adult Karate: Comprehensive training in techniques and forms.</li>
+                <li>Self-Defense: Practical skills for personal safety.</li>
+                <li>Advanced Competition Training: For those looking to compete at a higher level.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="testimonials" class="section">
+        <h2>Student Testimonials</h2>
+        <div class="content">
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="Student 1">
+                <h3>Max Johnson</h3>
+                <p>"Joining this dojo has been a life-changing experience. The skills I've learned and the friends I've made are invaluable. Sensei Akira's classes are always the highlight of my week!"</p>
+                <div class="clear"></div>
+            </div>
+            <div class="testimonial">
+                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Student 2">
+                <h3>Laura Smith</h3>
+                <p>"As a beginner, I was nervous, but the instructors and fellow students were incredibly welcoming. I've not only improved my physical fitness but also gained confidence and discipline."</p>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="section">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form id="contactForm">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showHeroSlides();
+
+        function showHeroSlides() {
+            let i;
+            let slides = document.getElementsByClassName("hero-slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex-1].style.display = "block";  
+            setTimeout(showHeroSlides, 4000); // Change image every 4 seconds
+        }
+
+        window.onload = showHeroSlides;
+    </script>
+</body>
+</html>
